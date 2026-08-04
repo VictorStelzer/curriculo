@@ -1,0 +1,24 @@
+import { IconButtonProps as MuiIconButtonProps } from '@mui/material';
+
+import { BaseHoverProps, SpacingProps, SizeProps, RadiusProps, FlexProps, VisibilityProps } from '@/components/styles';
+
+/** HoverProps do IconButton — suporta shadow, bg, color, border e scale. */
+interface HoverProps extends Pick<BaseHoverProps, 'shadow' | 'bgcolor' | 'color' | 'borderColor' | 'borderWidth' | 'scale' | 'opacity'> {}
+
+/**
+ * Propriedades do componente IconButton, mesclando MUI com as nossas customizações.
+ */
+export interface IconButtonProps extends Omit<MuiIconButtonProps, 'size' | 'color'>, SpacingProps, SizeProps, RadiusProps, FlexProps, VisibilityProps {
+    /** Efeito de hover. Se true, aplica um efeito padrão. Se objeto, aplica propriedades customizadas. */
+    hover?: boolean | HoverProps;
+    /** Tamanho do ícone */
+    size?: number | string;
+    /** A cor do botão (ícone). Aceita caminhos do tema. */
+    color?: string;
+    /** 
+     * Define o fundo do botão. 
+     * Se true, aplica uma opacidade de 10% da cor definida.
+     * Se string, aplica a cor informada.
+     */
+    bg?: boolean | string;
+}

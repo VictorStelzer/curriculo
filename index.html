@@ -2,46 +2,14 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Currículo de Victor Stelzer - Desenvolvedor Front-end">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    
-    <title>Currículo Victor Stelzer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Stelzer</title>
 </head>
 
 <body>
-    <main class="l-main bd-container">
-        <div class="resume" id="area-cv">
-            <div class="resume__left">
-                <div data-component="header"></div>
-                <div data-component="social"></div>
-                <div data-component="profile"></div>
-                <div data-component="education"></div>
-                <div data-component="languages"></div>
-            </div>
-
-            <div class="resume__right">
-                <div data-component="experience"></div>
-                <div data-component="skills"></div>
-                <div data-component="certificates"></div>
-                <div data-component="interests"></div>
-            </div>
-        </div>
-    </main>
-
-    <div data-component="footer"></div>
-
-    <a href="#" class="scrolltop" id="scroll-top">
-        <i class='bx bx-up-arrow-alt scrolltop-icon'></i>
-    </a>
-
-    <script src="assets/html2pdf.bundle.min.js"></script>
-    <script type="module" src="js/main.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>
