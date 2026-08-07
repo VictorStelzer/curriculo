@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Requisição para um arquivo ou diretório que existe de verdade: serve direto.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Qualquer outra rota é do react-router: devolve o index.html e deixa o
+  # BrowserRouter resolver no cliente.
+  RewriteRule ^ index.html [L]
+</IfModule>
