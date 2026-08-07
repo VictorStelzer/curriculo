@@ -39,3 +39,17 @@ jobs:
           remote_path: ${{ secrets.SFTP_REMOTE_PATH }}
           sftp_only: true
           sftpArgs: '-o ConnectTimeout=10'
+
+      # A action monta um `put -r <local_path>` e o shell expande o glob, então
+      # `dist/*` não pega arquivos ocultos. O .htaccess precisa ir à parte.
+      - name: Deploy .htaccess via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          username: ${{ secrets.SFTP_USERNAME }}
+          server: ${{ secrets.SFTP_HOST }}
+          port: ${{ secrets.SFTP_PORT }}
+          ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          local_path: 'dist/.htaccess'
+          remote_path: ${{ secrets.SFTP_REMOTE_PATH }}
+          sftp_only: true
+          sftpArgs: '-o ConnectTimeout=10'
