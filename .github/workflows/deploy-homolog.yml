@@ -11,12 +11,12 @@ jobs:
     environment: homolog
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -26,7 +26,7 @@ jobs:
         run: npm run build:hml
 
       - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
           username: ${{ secrets.SFTP_USERNAME }}
           server: ${{ secrets.SFTP_HOST }}
@@ -34,4 +34,5 @@ jobs:
           ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
           local_path: 'dist/*'
           remote_path: ${{ secrets.SFTP_REMOTE_PATH }}
+          sftp_only: true
           sftpArgs: '-o ConnectTimeout=10'
