@@ -10,8 +10,7 @@ export const Profile: React.FC = () => {
             <Text sx={styles.title}>Sobre Mim</Text>
 
             <Text mt={-1}>
-                Desenvolvedor Front-End e Mobile especializado em <b>React</b>, <b>React Native</b> e <b>TypeScript</b>.
-                Experiência no desenvolvimento de aplicações web e nativas, integração com <b>APIs REST</b>, publicação/builds de aplicativos e documentação técnica.
+                Desenvolvedor com experiência na criação, manutenção e publicação de aplicações web e mobile utilizando <b>React</b>, <b>React Native</b> e <b>TypeScript</b>. Atuação na integração de <b>APIs REST</b>, criação de componentes reutilizáveis, geração de builds nativas e elaboração de documentação técnica de sistemas.
             </Text>
         </Box>
     )

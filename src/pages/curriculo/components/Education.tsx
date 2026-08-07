@@ -27,7 +27,7 @@ export const Education: React.FC = () => {
                     title: <Text variant='body2' fontWeight="bold">{edu.title}</Text>,
                     children: (
                         <Box column gap={0.5}>
-                            <Text noWrap variant='caption'>{edu.institution}</Text>
+                            <Text noWrap variant='caption' sx={{ display: 'block' }}>{edu.institution}</Text>
                             <Text variant='caption' color='text.secondary'>{edu.period}</Text>
                         </Box>
                     )

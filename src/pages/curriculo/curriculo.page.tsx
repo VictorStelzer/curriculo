@@ -14,12 +14,13 @@ export const Curriculum: React.FC = () => {
 
         setIsGeneratingPdf(true)
 
-        const html2pdf = (await import('html2pdf.js')).default
-        await html2pdf().set({
-            margin: 0,
-            filename: 'Curriculo.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: {
+        try {
+            const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+                import('html2canvas'),
+                import('jspdf'),
+            ])
+
+            const canvas = await html2canvas(resumeRef.current, {
                 scale: 4,
                 useCORS: true,
                 windowWidth: 1100,
@@ -28,11 +29,18 @@ export const Curriculum: React.FC = () => {
                         (el as HTMLElement).style.visibility = 'hidden'
                     })
                 },
-            },
-            jsPDF: { format: 'a4', orientation: 'portrait' },
-        }).from(resumeRef.current).save()
+            })
 
-        setIsGeneratingPdf(false)
+            const imgData = canvas.toDataURL('image/jpeg', 0.98)
+            const pdfWidth = 210 // mm — largura padrão A4
+            const pdfHeight = (canvas.height * pdfWidth) / canvas.width
+
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pdfWidth, pdfHeight] })
+            pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight)
+            pdf.save('Curriculo.pdf')
+        } finally {
+            setIsGeneratingPdf(false)
+        }
     }
 
     return (
@@ -69,7 +77,7 @@ export const Curriculum: React.FC = () => {
                     <Experience />
                     <Skills />
                     <Certificates />
-                    <Interests />
+                    {/* <Interests /> */}
                 </Box>
             </Box>
 
