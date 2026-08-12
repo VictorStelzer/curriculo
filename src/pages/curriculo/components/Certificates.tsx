@@ -6,10 +6,11 @@ import { styles } from '../curriculo.styles';
 
 export const Certificates: React.FC = () => {
     const certificates = [
-        { title: 'React Native & Vue.js', description: 'Maximilian Schwarzmüller' },
+        { title: '100 Days of Code™: Python', description: 'Dr. Angela Yu' },
         { title: 'Prompt Engineering para Devs', description: 'Beer and Code' },
         { title: 'Full-Stack Web Bootcamp', description: 'Dr. Angela Yu' },
-        { title: '100 Days of Code™: Python', description: 'Dr. Angela Yu' },
+        { title: 'React / React Native - Next.js & Redux', description: 'Maximilian Schwarzmüller' },
+        { title: 'Vue - Router & Composition API', description: 'Maximilian Schwarzmüller' },
         { title: 'Desenvolvimento Flutter', description: 'Leonardo Moura Leitao' },
         { title: 'Excel + Power BI (Especialista)', description: 'Formação 7 cursos - Jilson Santana' },
     ]

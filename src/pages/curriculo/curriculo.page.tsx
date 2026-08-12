@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 
 import { Box } from '@/components'
 
-import { HeaderSection, Social, Profile, Education, Languages, Experience, Skills, Certificates, Interests, Footer } from './components'
+import { HeaderSection, Social, Profile, Education, Languages, Experience, Skills, Certificates, Footer } from './components'
 
 export const Curriculum: React.FC = () => {
 
