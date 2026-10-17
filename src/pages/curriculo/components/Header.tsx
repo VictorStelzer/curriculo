@@ -39,7 +39,7 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({ isDownloading, onD
                 <Box center column gap={1}>
                     <Image circle src={IMAGES.curriculo.victor} width={120} mb={1} />
 
-                    <Text variant='h5'>Victor <b>Stelzer</b></Text>
+                    <Text variant='h5'>Victor <b>Machado</b></Text>
                     <Text variant='subtitle2'>Desenvolvedor <b>Fullstack</b></Text>
                 </Box>
 
